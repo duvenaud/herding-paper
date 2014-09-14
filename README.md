@@ -1,7 +1,7 @@
 Optimally-weighted Herding is Bayesian Quadrature
 =============
 
-<img src="https://raw.githubusercontent.com/duvenaud/herding-paper/paper/figures/lovers2.png" width="300">
+<img src="https://raw.githubusercontent.com/duvenaud/herding-paper/master/paper/figures/lovers2.png" width="300">
 
 This repo contains the experiment source code as well as the latex source for a paper that mathematically relates two very different approaches to approximate integration.
 
