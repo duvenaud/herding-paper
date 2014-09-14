@@ -13,7 +13,6 @@ Herding and kernel herding are deterministic methods of choosing samples which s
 Contact the Authors:
 ------------------
 [David Duvenaud](http://mlg.eng.cam.ac.uk/duvenaud/) (dduvenaud@seas.harvard.edu)
-
 [Ferenc Huszar](http://mlg.eng.cam.ac.uk/ferenc/) (ferenc.huszar@gmail.com)
 
 Running the code:
