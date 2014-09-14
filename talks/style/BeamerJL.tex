@@ -1,0 +1,110 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer template options
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{items}[circle]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Unused but may be useful in future
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{custommargins}[2]%
+  {\addtolength{\leftskip}{#1}\addtolength{\rightskip}{#2}}{\par}
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pseudo constants
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\standardspace}{
+  0.03\textwidth
+}
+
+\newcommand{\standardtwocolumnwidth}{
+  0.45\textwidth
+}
+
+\definecolor{beamerblue}{rgb}{0.2,0.2,0.7}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\spacer}[1]{
+  \begin{minipage}{#1}
+    \hspace{#1}
+  \end{minipage}
+}
+
+\newcommand{\titlebodyskip}{
+  \begin{minipage}[t][\baselineskip][t]{\textwidth}
+  \end{minipage}
+}
+
+\newcommand{\headerbar}[1]{
+  \begin{minipage}[t][2.0\baselineskip][b]{1\textwidth}
+    #1
+  \end{minipage}
+}
+
+\newcommand{\bodyheaderskip}{
+	\begin{minipage}[t][\baselineskip][t]{\textwidth}
+	\end{minipage}
+}
+
+\newcommand{\slidebody}[1]{
+  \begin{minipage}[t][0.45\paperheight][t]{\textwidth}
+    #1
+  \end{minipage}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Slide elements
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\frametitleJL}[1]{
+  \begin{minipage}[t][2.0\baselineskip][b]{\textwidth}
+  {
+    \color{beamerblue}
+    \large
+    #1
+  }
+  \end{minipage}
+}
+
+\newcommand{\columnheader}[2]{
+  \begin{minipage}[b]{#1}
+  {
+  \small
+  \begin{center}
+    \textbf{#2}
+    \end{center}
+    \vspace{-2.3\baselineskip}
+    \begin{center}
+      {\color{beamerblue} \rule{\linewidth}{1pt}}
+    \end{center}
+  }
+  \end{minipage}
+}
+
+\newcommand{\columnbody}[2]{
+  \begin{minipage}[t][0.45\paperheight][t]{#1}
+    \vspace{0.000001\baselineskip}
+    {\footnotesize #2}
+  \end{minipage}
+}
+
+\newcommand{\takeaway}[1]{
+  \spacer{0.13\textwidth}
+  \begin{minipage}[t][2\baselineskip][c]{0.70\textwidth}
+  {
+    \small
+    \begin{center}
+    {
+      \color{beamerblue}
+      \textbf{#1}
+    }	
+    \end{center}
+  }
+  \end{minipage}
+  \spacer{0.13\textwidth}
+}
