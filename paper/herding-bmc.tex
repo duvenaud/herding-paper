@@ -105,9 +105,9 @@ where in the above formula $\mu_{p}=\int \phi(\vx)p(\vx)d\vx\in\He$ denotes the 
 Herding uses maximum mean discrepancy to evaluate of how well the sample set $\{\vx_1,\ldots,\vx_{N}\}$ represents the target distribution $p$:
 
 \begin{align}
-	\epsilon_{herding}&\left(\{\vx_1,\ldots,\vx_{N}\}\right) = \mmd_{\He}\left(p,\frac{1}{N}\sum_{n=1}^{N}\delta_{x_n}\right)\\
+	\epsilon^2_{herding}&\left(\{\vx_1,\ldots,\vx_{N}\}\right) = \mmd^2_{\He}\left(p,\frac{1}{N}\sum_{n=1}^{N}\delta_{x_n}\right)\\
 \nonumber	=&\iint k(x,y) p(x) p(y) dx dy\\
-		-2 &\frac{1}{N}\sum_{n=1}^{N}\int k(x,x_n) p(x) dx
+		- &\frac{1}{N}\sum_{n=1}^{N}\int k(x,x_n) p(x) dx
 		+ \frac{1}{N^2}\sum_{n,m=1}^{N} k(x_n,x_m)
 \label{eq:mmd_assumption}
 \end{align}
@@ -163,7 +163,7 @@ p(\vf(\vx\st)|\vf(\vX)) = \N{\vf_{\vx\st}}{\mf(\vx\st)}{\cov(\vx\st,\vx\st')}
 where
 \begin{align}
 \mf(\vx\st) = & k(\vx\st, \vX) K^{-1} \vf(\vX) \\
-\cov(\vx\st, \vx\st') = & k(\vx\st,\vx\st) - k(\vx\st, \vX) K^{-1} k(\vX, \vx\st)
+\cov(\vx\st, \vx\st') = & k(\vx\st,\vx'\st) - k(\vx\st, \vX) K^{-1} k(\vX, \vx'\st)
 \end{align} 
 %
 and $K = k(\vX, \vX)$. 
@@ -191,11 +191,11 @@ Conveniently, as in kernel herding, the desired expectation of $Z_{f,p}$ is simp
 %
 \begin{align}
 \expectargs{\gp}{Z} & = \vz^T K^{-1} \vf(\vX) \\
-    & = \sum_n w_{\bq}^{(n)} \vf_{\vx_n})
+    & = \sum_n w_{\bq}^{(n)} \vf(\vx_n)
 \end{align}  
 where
 \begin{align}  
-w_{\bq}^{(n)} & = \sum_m \vz_j^T K^{-1}_{nm}
+w_{\bq}^{(n)} & = \sum_m \vz_m^T K^{-1}_{mn}
 \label{eq:bq_weights}
 \end{align}
 %
@@ -265,7 +265,7 @@ The similarity in the behaviour of $\epsilon^{2}_{herding}$ and $\epsilon^{2}_{\
 \end{prop}
 %
 \begin{proof}
-The proof involves invoking the representer theorem, using bilinearity of scalar products and the fact that if $f$ is a standard Gaussian process then $\forall g\in\He: \left\langle f,g\right\rangle \sim \mathcal{N}(0,\Hnorm{g})$:
+The proof involves invoking the representer theorem, using bilinearity of scalar products and the fact that if $f$ is a standard Gaussian process then $\forall g\in\He: \left\langle f,g\right\rangle \sim \mathcal{N}(0,\Hnorm{g}^2)$:
 \begin{align}
 &\varianceargs{}{Z_{f,p}\vert f_{x_1}, \dots, f_{x_N}}=\\
 	&= \mathbb{E}_{f\sim GP} \left( \int f(x) p(x) dx - \sum_{n=1}^{N}w^{(n)}_{\bq{}} f(x_n)\right)^2\\
@@ -279,9 +279,9 @@ The proof involves invoking the representer theorem, using bilinearity of scalar
 We know that the the posterior mean $\expectargs{\gp}{Z_{f,p}\vert f_1,\ldots,f_N}$ is a Bayes estimator and has therefore the minimal expected squared error amongst all estimators. This allows us to further rewrite $\epsilon^{2}_{\bq{}}$ into the following minimax forms:
 %
 \begin{align}
-\epsilon^{2}_{\bq{}} &= \sup_{\substack{f\in\He\\\Hnorm{f}{\He}=1}} \left| \int f_x p(x) dx - \sum_{n=1}^{N}w^{(n)}_{\bq{}} f_{x_n}\right|^2\\
-	&= \inf_{\hat{Z}:\mathcal{X}^N\mapsto\mathbb{R}} \sup_{\substack{f\in\He\\\Hnorm{f}{\He}=1}} \left| Z - \hat{Z}\left(f_{x_1},\ldots,f_{x_N}\right)\right|^2\\
-	&= \inf_{\bm{w}\in\mathbb{R}^N} \sup_{\substack{f\in\He\\\Hnorm{f}{\He}=1}} \left| \int f_x p(x) dx - \sum_{n=1}^{N}w_n 	f_{x_n}\right|^2
+\epsilon^{2}_{\bq{}} &= \sup_{\substack{f\in\He\\\Hnorm{f}=1}} \left| \int f_x p(x) dx - \sum_{n=1}^{N}w^{(n)}_{\bq{}} f_{x_n}\right|^2\\
+	&= \inf_{\hat{Z}:\mathcal{X}^N\mapsto\mathbb{R}} \sup_{\substack{f\in\He\\\Hnorm{f}=1}} \left| Z - \hat{Z}\left(f_{x_1},\ldots,f_{x_N}\right)\right|^2\\
+	&= \inf_{\bm{w}\in\mathbb{R}^N} \sup_{\substack{f\in\He\\\Hnorm{f}=1}} \left| \int f_x p(x) dx - \sum_{n=1}^{N}w_n 	f_{x_n}\right|^2
 \end{align}
 %
 Looking at $\epsilon^{2}_{\bq{}}$  this way, we may discover the deep similarity to the criterion $\epsilon^2_{herding}$ that kernel herding minimises. Optimal sampling for Bayesian quadrature minimises the same objective as kernel herding, but with the uniform $\frac{1}{N}$ weights replaced by the optimal weights. As a corollary
@@ -315,13 +315,13 @@ s(A\cup\{x\})-s(A)\geq s(B\cup\{x\})-s(B) - \epsilon
 \end{align}
 
 \begin{prop}\label{prop:submodularity_SBQ}
-$\epsilon^{2}_{\bq{}}(\emptyset)-\epsilon^{2}_{\bq{}}(\cdot)$ is weakly a weakly submodular set function with constant $\epsilon<4r$, where $r$ is the incoherency
+$\epsilon^{2}_{\bq{}}(\emptyset)-\epsilon^{2}_{\bq{}}(\cdot)$ is a weakly submodular set function with constant $\epsilon<4r$, where $r$ is the incoherency
 \begin{equation}
 	r = \max_{x,x'\in\mathcal{P}\subseteq\mathcal{X}} \frac{k(x,x')}{\sqrt{k(x,x)k(x',x')}}
 \end{equation}
 \end{prop}
 \begin{proof} By the definition of $\mmd$ we can see that
-$-\epsilon^{2}_{\bq{}} = \inf_{w\in\mathbb{R}^N}\Hnorm{\mu_p - \sum_{n=1}^N w^{(n)}_{\bq{}}k(\cdot,\vx_n)}^2$ is the negative squared distance between the mean element $\mu_p$ and its projection onto the subspace spanned by the elements $k(\cdot,\vx_n)$. Substituting $k=1$ into Theorem 1 of \citet{KrauseCevher10} concludes the proof.
+$-\epsilon^{2}_{\bq{}} = -\inf_{w\in\mathbb{R}^N}\Hnorm{\mu_p - \sum_{n=1}^N w^{(n)}_{\bq{}}k(\cdot,\vx_n)}^2$ is the negative squared distance between the mean element $\mu_p$ and its projection onto the subspace spanned by the elements $k(\cdot,\vx_n)$. Substituting $k=1$ into Theorem 1 of \citet{KrauseCevher10} concludes the proof.
 \end{proof}
 
 Unfortunately, weak submodularity does not provide the strong near-optimality guarantees as submodularity does . If $s:2^\mathcal{X} \mapsto \mathbb{R}$ is a weakly submodular function with constant $\epsilon$, and $\vert\mathcal{A}_n\vert=n$ is the result of greedy optimisation of $s$, then
