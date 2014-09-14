@@ -8,11 +8,12 @@ This repo contains the experiment source code as well as the latex source for a 
 Abstract:
 ---------
 
-Herding and kernel herding are deterministic methods of choosing samples which summarise a probability distribution.  A related task is choosing samples for estimating integrals using Bayesian quadrature.  We show that the criterion minimised when selecting samples in kernel herding is equivalent to the posterior variance in Bayesian quadrature.  We then show that sequential Bayesian quadrature can be viewed as a weighted version of kernel herding which achieves performance superior to any other weighted herding method. We demonstrate empirically a rate of convergence faster than $\mathcal{O}(1/N)$.  Our results also imply an upper bound on the empirical error of the Bayesian quadrature estimate.
+Herding and kernel herding are deterministic methods of choosing samples which summarise a probability distribution.  A related task is choosing samples for estimating integrals using Bayesian quadrature.  We show that the criterion minimised when selecting samples in kernel herding is equivalent to the posterior variance in Bayesian quadrature.  We then show that sequential Bayesian quadrature can be viewed as a weighted version of kernel herding which achieves performance superior to any other weighted herding method. We demonstrate empirically a rate of convergence faster than O(1/N).  Our results also imply an upper bound on the empirical error of the Bayesian quadrature estimate.
 
 Contact the Authors:
 ------------------
 [David Duvenaud](http://mlg.eng.cam.ac.uk/duvenaud/) (dduvenaud@seas.harvard.edu)
+
 [Ferenc Huszar](http://mlg.eng.cam.ac.uk/ferenc/) (ferenc.huszar@gmail.com)
 
 Running the code:
