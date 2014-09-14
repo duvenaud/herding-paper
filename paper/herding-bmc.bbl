@@ -1,0 +1,95 @@
+\begin{thebibliography}{12}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bach et~al.(2012)Bach, Lacoste-Julien, and
+  Obozinski]{bach2012equivalence}
+Bach, F., Lacoste-Julien, S., and Obozinski, G.
+\newblock On the equivalence between herding and conditional gradient
+  algorithms.
+\newblock \emph{Arxiv preprint arXiv:1203.4523}, 2012.
+
+\bibitem[Chen et~al.(2010)Chen, Welling, and Smola]{chen2010super}
+Chen, Y., Welling, M., and Smola, A.
+\newblock Super-samples from kernel herding.
+\newblock UAI, 2010.
+
+\bibitem[Cowles \& Carlin(1996)Cowles and Carlin]{CowlesCarlin96}
+Cowles, Mary~K. and Carlin, Bradley~P.
+\newblock Markov chain monte carlo convergence diagnostics: A comparative
+  review.
+\newblock \emph{Journal of the American Statistical Association}, 91\penalty0
+  (434):\penalty0 883--904, 1996.
+\newblock ISSN 01621459.
+\newblock \doi{10.2307/2291683}.
+\newblock URL \url{http://dx.doi.org/10.2307/2291683}.
+
+\bibitem[Krause et~al.(2006)Krause, Guestrin, Gupta, and Kleinberg]{guestrin1}
+Krause, A., Guestrin, C., Gupta, A., and Kleinberg, J.
+\newblock Near-optimal sensor placements: Maximizing information while
+  minimizing communication cost.
+\newblock In \emph{Proceedings of the Fifth International Conference on
+  Information Processing in Sensor Networks (IPSN '06)}, pp.\  2--10,
+  Nashville, Tennessee, USA, 2006.
+
+\bibitem[Krause \& Cevher(2010)Krause and Cevher]{KrauseCevher10}
+Krause, Andreas and Cevher, Volkan.
+\newblock Submodular dictionary selection for sparse representation.
+\newblock In F{\"u}rnkranz, Johannes and Joachims, Thorsten (eds.),
+  \emph{ICML}, pp.\  567--574. Omnipress, 2010.
+\newblock ISBN 978-1-60558-907-7.
+
+\bibitem[Minka(2000)]{minka2000dqr}
+Minka, T.~P.
+\newblock {Deriving quadrature rules from Gaussian processes}.
+\newblock Technical report, Statistics Department, Carnegie Mellon University,
+  2000.
+
+\bibitem[O'Hagan(1991)]{BZHermiteQuadrature}
+O'Hagan, A.
+\newblock Bayes-{H}ermite quadrature.
+\newblock \emph{Journal of Statistical Planning and Inference}, 29:\penalty0
+  245--260, 1991.
+
+\bibitem[Rasmussen \& Ghahramani(2003)Rasmussen and Ghahramani]{BZMonteCarlo}
+Rasmussen, C.~E. and Ghahramani, Z.
+\newblock {B}ayesian monte carlo.
+\newblock In Becker, S. and Obermayer, K. (eds.), \emph{Advances in Neural
+  Information Processing Systems}, volume~15. MIT Press, Cambridge, MA, 2003.
+
+\bibitem[Rasmussen \& Williams(2006)Rasmussen and
+  Williams]{rasmussen38gaussian}
+Rasmussen, C.E. and Williams, CKI.
+\newblock {Gaussian Processes for Machine Learning}.
+\newblock \emph{The MIT Press, Cambridge, MA, USA}, 2006.
+
+\bibitem[Song et~al.(2008)Song, Zhang, Smola, Gretton, and
+  Sch\"{o}lkopf]{Song2008}
+Song, Le, Zhang, Xinhua, Smola, Alex, Gretton, Arthur, and Sch\"{o}lkopf,
+  Bernhard.
+\newblock Tailoring density estimation via reproducing kernel moment matching.
+\newblock In \emph{Proceedings of the 25th international conference on Machine
+  learning}, ICML '08, pp.\  992--999, New York, NY, USA, 2008. ACM.
+\newblock ISBN 978-1-60558-205-4.
+\newblock \doi{10.1145/1390156.1390281}.
+\newblock URL \url{http://doi.acm.org/10.1145/1390156.1390281}.
+
+\bibitem[Sriperumbudur et~al.(2010)Sriperumbudur, Gretton, Fukumizu,
+  Sch\"{o}lkopf, and Lanckriet]{Sriperumbudur2010}
+Sriperumbudur, Bharath~K., Gretton, Arthur, Fukumizu, Kenji, Sch\"{o}lkopf,
+  Bernhard, and Lanckriet, Gert~R.G.
+\newblock Hilbert space embeddings and metrics on probability measures.
+\newblock \emph{J. Mach. Learn. Res.}, 99:\penalty0 1517--1561, August 2010.
+\newblock ISSN 1532-4435.
+\newblock URL \url{http://dl.acm.org/citation.cfm?id=1859890.1859901}.
+
+\bibitem[Welling(2009)]{welling2009herding}
+Welling, M.
+\newblock Herding dynamical weights to learn.
+\newblock In \emph{Proceedings of the 26th Annual International Conference on
+  Machine Learning}, pp.\  1121--1128. ACM, 2009.
+
+\end{thebibliography}
